@@ -1,20 +1,23 @@
 <?php
+
+
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "testDB";
+$dbname = "test";//test-созданная база данных
 
 
 
-//oo способ создания таблиц
+////oo способ создания таблиц
 //$conn = new mysqli($servername,$username,$password,$dbname);
 //if ($conn->connect_error) {
 //    die("Connection failed:".$conn->connect_error);
 //}
-//$sql = "CREATE TABLE users(
+//$sql = "CREATE TABLE users( //создание таблицы users
 //      name VARCHAR (30) NOT NULL,
 //      surname VARCHAR (30) NOT NULL PRIMARY KEY,
 //      password VARCHAR (30) NOT NULL)";
+////NOT NULL означает что каждая строка должна содержать значения для етого столбца нульовые значения допускатся небудут
 ////Primary key используеться для однозначной идентификации строк в таблице,
 //// каждая таблица должна иметь первичный ключ столбца его значения должно быть уникальным для каждой записи в столбце тоесть ето первичный ключ
 //
@@ -27,14 +30,14 @@ $dbname = "testDB";
 //$conn->close();
 
 
-//поцедурный способ
+//процедурный способ
 //$conn = mysqli_connect($servername,$username,$password,$dbname);
 //if (!$conn) {
 //    die("Connection failed:". mysqli_connect_error());
 //}
 //
-//$sql = "CREATE TABLE users2(
-//      name VARCHAR (30) NOT NULL,
+//$sql = "CREATE TABLE users2( //создание таблицы users2
+//      name VARCHAR (30) NOT NULL,  //наименование полей (name surname password) varchar (тип данных)
 //      surname VARCHAR (30) NOT NULL PRIMARY KEY,
 //      password VARCHAR (30) NOT NULL)";
 ////Primary key используеться для однозначной идентификации строк в таблице,
@@ -48,6 +51,7 @@ $dbname = "testDB";
 //
 //$conn->close();
 
+//PDO
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);

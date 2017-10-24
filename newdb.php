@@ -42,7 +42,7 @@
 //    $conn = new PDO("mysql:host=$servername; dbname=newDB", $username,$password);//подключаем host, имя базы данных(newDB),user pass
 //    echo "Connection successfully";
 //}
-//catch (PDOException $e){
+//catch (PDOException $e) {
 //    echo "Connection filed:". $e->getMessage();
 //}
 
@@ -55,15 +55,14 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 
+
+//создаем базу данных ОО
 $conn = new mysqli($servername,$username,$password);
 
 if($conn->connect_error) {
     die("Connection failed:" . $conn->connect_error);
-
 }
 
-
-//     //создаем базу данных ОО
 $sql = "CREATE DATABASE testDB";
 
 if ($conn->query($sql)){
