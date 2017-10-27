@@ -8,7 +8,7 @@ $dbname = "test";//test-созданная база данных
 
 
 
-////oo способ создания таблиц
+////oo способ создания таблиц в базе данных
 //$conn = new mysqli($servername,$username,$password,$dbname);
 //if ($conn->connect_error) {
 //    die("Connection failed:".$conn->connect_error);
